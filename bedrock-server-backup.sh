@@ -44,7 +44,7 @@ cd - >/dev/null
 
 echo "save resume" > ${BEDROCK_STDIN}
 
-echo "Directory: ${BACKUP_DIR}, Files: ${backup_targets[@]}"
+echo "Directory: ${BACKUP_DIR}, Count: ${#backup_targets[@]}, Files: ${backup_targets[@]}"
 
 # Remove old backups
 find ${MINECRAFT_HOME}/backup/worlds/* -maxdepth 0 -mtime +30 | xargs rm -rf
