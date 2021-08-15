@@ -1,0 +1,18 @@
+[Unit]
+Description=Minecraft Bedrock Server
+Requires=bedrock-server.socket
+
+[Service]
+Environment=LD_LIBRARY_PATH=/var/lib/minecraft/bedrock-server
+WorkingDirectory=/var/lib/minecraft/bedrock-server
+ExecStart=/var/lib/minecraft/bedrock-server/bedrock_server
+User=minecraft
+Group=minecraft
+Restart=always
+
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

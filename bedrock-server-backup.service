@@ -1,0 +1,8 @@
+[Unit]
+Description=Bedrock Server Backup Service
+
+[Service]
+Type=oneshot
+ExecStart=/var/lib/minecraft/scripts/bedrock-server-backup.sh
+User=minecraft
+Group=minecraft

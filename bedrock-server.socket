@@ -1,0 +1,9 @@
+[Unit]
+Description=Bedrock Server STDIN Socket (FIFO)
+StopWhenUnneeded=yes
+
+[Socket]
+ListenFIFO=%t/%N.stdin
+RemoveOnStop=yes
+SocketUser=minecraft
+SocketGroup=minecraft

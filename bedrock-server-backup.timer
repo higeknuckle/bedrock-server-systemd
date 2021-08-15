@@ -1,0 +1,9 @@
+[Unit]
+Description=Bedrock Server Backup Service Timer
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=15m
+
+[Install]
+WantedBy=timers.target
