@@ -14,6 +14,9 @@
   * バックアップ用タイマー
 * bedrock-server-backup.sh
   * バックアップスクリプト
+  * オンラインのプレーヤー数を確認し、0 人の場合はバックアップ取得をスキップ。
+  * `save hold` -> `save query` -> copy & truncate -> `save resume`
+  * 古いバックアップを削除
 
 ## セットアップ
 
