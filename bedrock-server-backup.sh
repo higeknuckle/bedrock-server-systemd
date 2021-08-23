@@ -5,7 +5,7 @@ BEDROCK_STDIN=/run/${UNIT}.stdin
 MINECRAFT_HOME=/var/lib/minecraft
 BEDROCK_HOME=${MINECRAFT_HOME}/${UNIT}
 BACKUP_DIR=${MINECRAFT_HOME}/backup/worlds/`date +"%Y%m%d_%H%M%S"`
-BACKUP_REMAIN_DAYS=3
+BACKUP_ARCHIVE_COUNT=288
 
 # Count online players
 DATE=`date +"%Y-%m-%d %H:%M:%S"`
@@ -63,4 +63,4 @@ echo "save resume" > ${BEDROCK_STDIN}
 echo "Backup finished. Directory: ${BACKUP_DIR}, Count: ${#backup_targets[@]}, Files: ${backup_targets[@]}"
 
 # Delete old backups
-find ${MINECRAFT_HOME}/backup/worlds/* -maxdepth 0 -mtime +${BACKUP_REMAIN_DAYS} | xargs rm -rf
+ls -dt ${MINECRAFT_HOME}/backup/worlds/* | tail -n +`expr ${BACKUP_ARCHIVE_COUNT} + 1` | xargs rm -rf
